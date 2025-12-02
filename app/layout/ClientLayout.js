@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Container from "../components/Container";
 
 //برای اینکه نوبار و فوتر تو لیوت اصلی نذارم و شلوغ نشه این کامپوننت رو ساختم و از داخلش همه صفحات ب صورت سرور کامپوننت رد میشه
 
