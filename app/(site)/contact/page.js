@@ -42,7 +42,7 @@ function Contact() {
           <input
             type="text"
             placeholder="Name"
-            className="bg-[#1F2937] text-white w-full p-3 rounded-md outline-none focus:ring-2 focus:ring-[#EAB308]"
+            className="bg-[#] text-white w-full p-3 rounded-md outline-none focus:ring-2 focus:ring-[#EAB308]"
           />
 
           <textarea
