@@ -25,7 +25,7 @@ function Contact() {
 
           <div className="flex flex-col md:flex-row  md:items-center">
             <label className="text-[#EAB308]">Email_</label>
-            <p className="text-white">example@gmail.com</p>
+            <p className="text-white">mostafagerayli778@gmail.com</p>
           </div>
 
           <div className="flex flex-col md:flex-row  md:items-center">
@@ -42,7 +42,7 @@ function Contact() {
           <input
             type="text"
             placeholder="Name"
-            className="bg-[#] text-white w-full p-3 rounded-md outline-none focus:ring-2 focus:ring-[#EAB308]"
+            className="bg-[#1F2937] text-white w-full p-3 rounded-md outline-none focus:ring-2 focus:ring-[#EAB308]"
           />
 
           <textarea
