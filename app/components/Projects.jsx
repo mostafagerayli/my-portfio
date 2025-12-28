@@ -52,16 +52,24 @@ function Projects() {
           </p>
         </Link>
 
-        <div className="bg-[#1F2937] rounded-2xl p-6 hover:scale-105 transform transition duration-300">
-          <div className="h-48 bg-gray-600 rounded-md mb-4"></div>
+        <Link href='https://next-store-e6gsb7kzb-mostafagerayli778-1110s-projects.vercel.app/' className="bg-[#1F2937] rounded-2xl p-6 hover:scale-105 transform transition duration-300">
+          <div className="h-48 bg-gray-600 rounded-md mb-4">
+          {/* تصویر پروژه */}
+            <Image
+              src="/images/Screenshot 2025-12-28 151500.png"
+              width={400}
+              height={200}
+              alt="profile image"
+              className="rounded-sm object-cover h-49"
+            />
+          </div>
           <h3 className="text-white text-xl font-semibold mb-2">
-            Project Title
+           Task manager
           </h3>
           <p className="text-gray-400 text-sm">
-            Short description of the project goes here. Technologies used:
-            React, Tailwind, etc.
+           In this project, I used  reactQuery , React, tailwind css , supabase
           </p>
-        </div>
+        </Link>
       </div>
     </div>
   );

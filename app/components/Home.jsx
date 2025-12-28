@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,12 +13,14 @@ export default function Home() {
           I’m a Front-End Developer who builds modern, fast, and user-focused
           web interfaces.
         </p>
-        <Link
-          href="/contact"
-          className="inline-block bg-yellow-400 text-black px-5 py-2 rounded-md font-medium hover:bg-yellow-300 transition"
-        >
-          Contact me
-        </Link>
+<a
+  href="/resume/resume.pdf"
+  download
+  className="inline-block bg-yellow-400 text-black px-5 py-2 rounded-md font-medium hover:bg-yellow-300 transition"
+>
+  Download Resume
+</a>
+
       </div>
 
       {/* spacer */}
