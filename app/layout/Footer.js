@@ -11,16 +11,15 @@ function Footer() {
             <div className="text-center md:text-left">
             <h1 className="text-white font-bold text-3xl">About me</h1>
               <p className="text-slate-400">
-                © 2025 John Doe. All rights reserved.
               </p>
               <p className="text-slate-500 flex items-center justify-center md:justify-start gap-1 mt-2">
-                Made with using React & Tailwind CSS
+                Made with using Next & Tailwind CSS
               </p>
             </div>
             
             <div className="flex gap-4">
               <Link
-                href="#" 
+                href="https://github.com/mostafagerayli" 
                 className="p-1 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
                 aria-label="GitHub"
               >
@@ -28,7 +27,7 @@ function Footer() {
 
               </Link>
               <Link
-                href="#" 
+                href="https://www.linkedin.com/in/mostafa-gerayli-16466a380/" 
                 className="p-1 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
                 aria-label="LinkedIn"
               >
