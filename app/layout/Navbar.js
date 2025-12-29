@@ -2,6 +2,7 @@
 
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import ThemeToggle from "../components/ToggleTheme";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -37,7 +38,7 @@ export default function Navbar({ scrollTo, active }) {
               </div>
 
               {/* Desktop menu */}
-              <div className="hidden sm:flex gap-2">
+              <div className="hidden sm:flex items-center gap-4">
                 {navigation.map((item) => (
                   <button
                     key={item.id}
@@ -52,6 +53,11 @@ export default function Navbar({ scrollTo, active }) {
                     {item.name}
                   </button>
                 ))}
+
+                {/* Theme toggle در کنار منو */}
+                <div className="ml-10">
+                  <ThemeToggle />
+                </div>
               </div>
             </div>
           </div>
@@ -76,6 +82,10 @@ export default function Navbar({ scrollTo, active }) {
                   {item.name}
                 </button>
               ))}
+              {/* Theme toggle موبایل */}
+              <div className="px-3 py-2">
+                <ThemeToggle />
+              </div>
             </div>
           </Disclosure.Panel>
         </>

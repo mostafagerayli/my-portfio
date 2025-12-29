@@ -4,7 +4,7 @@ import Link from "next/link"
 
 function Footer() {
   return (
-    <footer className="bg-[#1F2937] text-white py-12">
+    <footer className="bg-[#020617]/90 text-white py-12">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">

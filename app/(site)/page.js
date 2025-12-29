@@ -57,7 +57,7 @@ export default function Page() {
       <main className="pt-16">
         <section
           id="home"
-          className="min-h-screen bg-[#111827] scroll-mt-16"
+          className="min-h-screen bg-[#111827] scroll-mt-16 dark:bg-white"
         >
           <Home />
         </section>
@@ -78,14 +78,14 @@ export default function Page() {
 
         <section
           id="skills"
-          className="min-h-screen bg-[#020617] scroll-mt-16"
+          className="min-h-screen bg-[#020617] scroll-mt-16 dark:bg-slate-300"
         >
           <Skills />
         </section>
 
         <section
           id="contact"
-          className="min-h-screen bg-[#111827] scroll-mt-16"
+          className="min-h-screen bg-[#111827] scroll-mt-16 dark:bg-white"
         >
           <Contact />
         </section>
