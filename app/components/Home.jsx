@@ -1,24 +1,34 @@
 "use client";
 
 import Image from "next/image";
+import GradientText from "./GradientText";
 
 export default function Home() {
   return (
     <div className="dark:bg-gray-50 bg-[#111827] px-6 py-14 md:px-20 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-      
       {/* متن */}
       <div className="md:col-span-4 text-center md:text-left">
-        <p className="text-yellow-500 dark:text-yellow-400 text-lg">Hello, Welcome</p>
-        
-        <h1 className="dark:text-gray-900 text-white text-3xl md:text-4xl font-bold mt-4">
+        <p className="text-yellow-500 dark:text-yellow-400 text-lg">
+          Hello, Welcome
+        </p>
+
+        {/* <h1 className="dark:text-gray-900 text-white text-3xl md:text-4xl font-bold mt-4"> */}
+        <GradientText
+          colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
+          animationSpeed={8}
+          showBorder={false}
+          className="dark:text-gray-900 text-white text-3xl md:text-4xl font-bold mt-4 pr-[80px]"
+        >
           I’m Mostafa Gerayli
-        </h1>
-        
-        <p className="dark:text-gray-700 text-slate-500 mt-2 mb-6">
+        </GradientText>
+
+        {/* </h1> */}
+
+        <p className="dark:text-gray-700 text-slate-500 mt-4 mb-6">
           I’m a Front-End Developer who builds modern, fast, and user-focused
           web interfaces.
         </p>
-        
+
         <a
           href="/resume/resume.pdf"
           download
@@ -36,14 +46,13 @@ export default function Home() {
         <div className="rounded-3xl p-3 shadow-md dark:shadow-lg">
           <Image
             src="/images/photo_2025-12-28_08-40-12.jpg"
-            width={240}
-            height={240}
+            width={280}
+            height={280}
             alt="profile image"
             className="rounded-2xl object-cover h-60"
           />
         </div>
       </div>
-
     </div>
   );
 }
