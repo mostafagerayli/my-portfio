@@ -85,7 +85,7 @@ export default function Page() {
 
         <section
           id="contact"
-          className="min-h-screen bg-[#111827] scroll-mt-16 dark:bg-white"
+          className="min-h-screen bg-[#111827] scroll-mt-16 dark:bg-gray-50"
         >
           <Contact />
         </section>

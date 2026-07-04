@@ -5,7 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}", // کامپوننت‌ها
     "./context/**/*.{js,ts,jsx,tsx}"     // context و provider ها
   ],
-  darkMode: ["class", "class"],
+  darkMode: ["class"],
   theme: {
   	extend: {
   		borderRadius: {
