@@ -1,7 +1,5 @@
-"use client";
-
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiTypescript, SiRedux } from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiRedux } from "react-icons/si";
 
 function Skills() {
   const skills = [

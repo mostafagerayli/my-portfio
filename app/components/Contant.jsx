@@ -1,5 +1,3 @@
-"use client";
-
 function Contact() {
   return (
     <div className="bg-[#111827] dark:bg-gray-50 px-5 py-16 md:px-20">
