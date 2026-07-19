@@ -30,7 +30,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
-                href="/resume/resume.pdf"
+                href="/resume/Mostafa_Gerayli_Front_End_Resume.pdf"
                 download
                 className="px-6 py-3 rounded-lg bg-yellow-400 hover:bg-yellow-300 transition font-semibold text-black"
               >
