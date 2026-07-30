@@ -8,31 +8,64 @@ export default function Home() {
       <div className="max-w-7xl mx-auto w-full px-6 md:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
           {/* Text */}
-          <div className="lg:col-span-6 text-center lg:text-left">
+
+          <div className="lg:col-span-6 mt-20 lg:mt-0 text-center lg:text-left">
             <p className="text-yellow-500 dark:text-yellow-400 text-lg font-medium">
               Hello, Welcome 👋
             </p>
 
-            <GradientText
-              colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
-              animationSpeed={8}
-              showBorder={false}
-              className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-center lg:text-left"
+            <h1
+              className="
+      mt-4
+      whitespace-nowrap
+      text-3xl
+      sm:text-4xl
+      lg:text-5xl
+      font-bold
+      leading-[1.2]
+      bg-gradient-to-r
+      from-purple-500
+      via-pink-400
+      to-purple-300
+      bg-clip-text
+      text-transparent
+      pb-2
+    "
             >
               I&apos;m Mostafa Gerayli
-            </GradientText>
+            </h1>
 
-            <p className="mt-6 text-gray-400 dark:text-gray-700 text-lg leading-8 max-w-xl mx-auto lg:mx-0">
-              I&apos;m a Front-End Developer specializing in React and Next.js.
-              I build modern, fast, scalable, and user-focused web applications
-              with clean architecture and excellent user experience.
+            <p
+              className="
+      mt-6
+      max-w-xl
+      mx-auto
+      lg:mx-0
+      text-lg
+      leading-8
+      text-gray-400
+      dark:text-gray-700
+    "
+            >
+              I&apos;m a passionate Frontend Developer focused on building
+              modern, user-friendly web applications. I enjoy solving problems,
+              improving my skills, and creating valuable digital products while
+              growing as part of a professional development team.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
               <Link
-                href="/resume/Mostafa_Gerayli_Front_End_Resume.pdf"
+                href="/resume/Mostafa_Gerayli_FrontEnd_Resume.pdf"
                 download
-                className="px-6 py-3 rounded-lg bg-yellow-400 hover:bg-yellow-300 transition font-semibold text-black"
+                className="
+        rounded-lg
+        bg-yellow-400
+        px-6 py-3
+        font-semibold
+        text-black
+        transition
+        hover:bg-yellow-300
+      "
               >
                 Download Resume
               </Link>
@@ -40,7 +73,16 @@ export default function Home() {
               <Link
                 href="https://github.com/mostafagerayli"
                 target="_blank"
-                className="px-6 py-3 rounded-lg border border-gray-500 text-white dark:text-gray-900 hover:border-yellow-400 hover:text-yellow-400 transition"
+                className="
+        rounded-lg
+        border border-gray-500
+        px-6 py-3
+        text-white
+        transition
+        hover:border-yellow-400
+        hover:text-yellow-400
+        dark:text-gray-900
+      "
               >
                 GitHub
               </Link>
@@ -48,7 +90,7 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end">
+          <div className="lg:col-span-6 flex justify-center lg:justify-end pb-10 lg:pb-0">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/profile.png"

@@ -15,11 +15,12 @@ function About() {
             </h2>
 
             <p className="mt-8 text-lg leading-8 text-gray-400 dark:text-gray-700 max-w-2xl mx-auto lg:mx-0">
-              I am a Front-End Developer specializing in React and Next.js,
-              passionate about building scalable, high-performance, and
-              user-focused web applications. I enjoy transforming ideas into
-              clean, responsive, and engaging user interfaces while following
-              modern development practices and writing maintainable code.
+              I’m a Frontend Developer with 2 years of experience building
+              modern, responsive, and user-friendly web applications. I enjoy
+              solving real-world problems, writing clean and maintainable code,
+              and continuously improving my skills. My goal is to create
+              products that deliver real value to users while growing as part of
+              a collaborative and professional development team.
             </p>
           </div>
 

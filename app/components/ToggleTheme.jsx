@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { useTheme } from "../context/ThemeProvider";
 
@@ -8,15 +9,26 @@ function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      style={{
-        background: "transparent",
-        border: "none",
-        cursor: "pointer",
-        color: "var(--text-color)",
-      }}
+      className="
+        flex items-center justify-center
+        rounded-lg
+        p-2
+        text-slate-700
+        transition-colors
+        hover:bg-slate-100
+        dark:text-yellow-400
+        dark:hover:bg-slate-800
+      "
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? <FaMoon size={22} /> : <FaSun size={22} />}
+      {theme === "dark" ? (
+        <FaMoon size={22} />
+      ) : (
+        <FaSun
+          size={22}
+          className="text-yellow-500"
+        />
+      )}
     </button>
   );
 }

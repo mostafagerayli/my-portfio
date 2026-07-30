@@ -1,85 +1,76 @@
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaGitAlt,
-} from "react-icons/fa";
-
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiRedux,
-  SiReactquery,
-  SiSupabase,
-} from "react-icons/si";
-
-import { TbApi } from "react-icons/tb";
-
 function Skills() {
-  const skills = [
+  const skillGroups = [
     {
-      name: "HTML5",
-      icon: <FaHtml5 className="text-orange-500 w-6 h-6" />,
-      level: 90,
+      title: "Frontend",
+      skills: [
+        "React.js",
+        "Next.js",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Responsive Design",
+      ],
     },
+
     {
-      name: "CSS3 / Tailwind CSS",
-      icon: <FaCss3Alt className="text-blue-500 w-6 h-6" />,
-      level: 90,
+      title: "Backend & Database",
+      skills: [
+        "Supabase",
+        "PostgreSQL",
+        "Prisma ORM",
+        "REST APIs",
+        "Next.js API Routes",
+        "Server Actions",
+      ],
     },
+
     {
-      name: "JavaScript (ES6+)",
-      icon: <FaJs className="text-yellow-400 w-6 h-6" />,
-      level: 80,
+      title: "Languages",
+      skills: [
+        "JavaScript (ES6+)",
+        "TypeScript",
+      ],
     },
+
     {
-      name: "React.js",
-      icon: <FaReact className="text-cyan-400 w-6 h-6" />,
-      level: 85,
+      title: "Tools",
+      skills: [
+        "Git",
+        "GitHub",
+        "Vercel",
+        "Figma",
+      ],
     },
+
     {
-      name: "Next.js",
-      icon: (
-        <SiNextdotjs className="text-black dark:text-white w-6 h-6" />
-      ),
-      level: 85,
+      title: "State & Data",
+      skills: [
+        "Redux Toolkit",
+        "React Query",
+        "React Hook Form",
+        "Zod",
+        "Context API",
+      ],
     },
+
     {
-      name: "TypeScript",
-      icon: <SiTypescript className="text-blue-600 w-6 h-6" />,
-      level: 50,
-    },
-    {
-      name: "React Query",
-      icon: <SiReactquery className="text-red-500 w-6 h-6" />,
-      level: 80,
-    },
-    {
-      name: "Redux Toolkit",
-      icon: <SiRedux className="text-violet-500 w-6 h-6" />,
-      level: 80,
-    },
-    {
-      name: "Git",
-      icon: <FaGitAlt className="text-orange-600 w-6 h-6" />,
-      level: 80,
-    },
-    {
-      name: "REST API",
-      icon: <TbApi className="text-green-500 w-6 h-6" />,
-      level: 85,
-    },
-    {
-      name: "Supabase",
-      icon: <SiSupabase className="text-emerald-500 w-6 h-6" />,
-      level: 75,
+      title: "Concepts",
+      skills: [
+        "Authentication",
+        "Authorization",
+        "SSR",
+        "CSR",
+        "SEO",
+        "Performance Optimization",
+        "Component-Based Architecture",
+      ],
     },
   ];
 
   return (
     <section className="bg-[#020617] dark:bg-slate-300 py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
+
         <h2 className="text-3xl md:text-4xl font-bold text-center text-white dark:text-gray-900 mb-12">
           My{" "}
           <span className="text-[#EAB308] dark:text-amber-500">
@@ -87,32 +78,65 @@ function Skills() {
           </span>
         </h2>
 
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skills.map((skill) => (
-            <div key={skill.name}>
-              <div className="flex items-center mb-3">
-                {skill.icon}
 
-                <p className="ml-3 font-semibold text-white dark:text-gray-900">
-                  {skill.name}
-                </p>
+          {skillGroups.map((group) => (
+            <div
+              key={group.title}
+              className="
+                rounded-2xl
+                border
+                border-slate-700
+                bg-slate-900/50
+                p-6
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:border-[#EAB308]
+                dark:bg-white
+                dark:border-slate-200
+              "
+            >
 
-                <span className="ml-auto text-sm text-gray-400 dark:text-gray-700">
-                  {skill.level}%
-                </span>
+              <h3 className="mb-5 text-xl font-bold text-[#EAB308]">
+                {group.title}
+              </h3>
+
+
+              <div className="flex flex-wrap gap-3">
+
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="
+                      rounded-lg
+                      border
+                      border-slate-700
+                      bg-slate-800/80
+                      px-3
+                      py-2
+                      text-sm
+                      text-gray-200
+                      transition
+                      hover:border-[#EAB308]
+                      hover:text-[#EAB308]
+                      dark:bg-slate-100
+                      dark:border-slate-300
+                      dark:text-gray-800
+                    "
+                  >
+                    {skill}
+                  </span>
+                ))}
+
               </div>
 
-              <div className="w-full h-3.5 rounded-full bg-gray-700 dark:bg-gray-300 overflow-hidden">
-                <div
-                  className="h-full rounded-full bg-[#EAB308] dark:bg-amber-500 transition-all duration-700"
-                  style={{
-                    width: `${skill.level}%`,
-                  }}
-                />
-              </div>
             </div>
           ))}
+
         </div>
+
       </div>
     </section>
   );

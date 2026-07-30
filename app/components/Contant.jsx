@@ -1,62 +1,190 @@
+import Link from "next/link";
+
 function Contact() {
   return (
-    <div className="bg-[#111827] dark:bg-gray-50 px-5 py-16 md:px-20">
-      {/* عنوان */}
-      <div className="text-center mb-12">
-        <h1 className="text-white dark:text-gray-900 font-bold text-3xl">
-          Contact <span className="text-[#EAB308] dark:text-amber-500">Me</span>
-        </h1>
-        <p className="text-gray-400 dark:text-gray-700 mt-4"></p>
-      </div>
+    <section className="bg-[#111827] dark:bg-gray-50 px-6 py-16 md:px-20">
+      <div className="max-w-7xl mx-auto">
 
-      {/* محتوا */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-        {/* اطلاعات سمت چپ */}
-        <div className="md:col-span-5 space-y-10">
-          <div className="flex flex-col md:flex-row md:items-center">
-            <label className="text-[#EAB308] dark:text-amber-500">Address_</label>
-            <p className="text-white dark:text-gray-900">Iran, Bojnord</p>
-          </div>
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-900">
+            Get{" "}
+            <span className="text-[#EAB308] dark:text-amber-500">
+              In Touch
+            </span>
+          </h2>
 
-          <div className="flex flex-col md:flex-row md:items-center">
-            <label className="text-[#EAB308] dark:text-amber-500">Phone_</label>
-            <p className="text-white dark:text-gray-900">+98 939 523 6615</p>
-          </div>
-
-          <div className="flex flex-col md:flex-row md:items-center">
-            <label className="text-[#EAB308] dark:text-amber-500">Email_</label>
-            <p className="text-white dark:text-gray-900">mostafagerayli778@gmail.com</p>
-          </div>
-
-          <div className="flex flex-col md:flex-row md:items-center">
-            <label className="text-[#EAB308] dark:text-amber-500">Website_</label>
-            <p className="text-white dark:text-gray-900">yourwebsite.com</p>
-          </div>
+          <p className="mt-4 text-gray-400 dark:text-gray-700 max-w-xl mx-auto">
+            I&apos;m open to frontend opportunities, collaborations, and
+            interesting projects. Feel free to reach out.
+          </p>
         </div>
 
-        {/* فاصله وسط */}
-        <div className="hidden md:block md:col-span-2"></div>
 
-        {/* فرم ارتباط */}
-        <div className="md:col-span-5 space-y-5">
-          <input
-            type="text"
-            placeholder="Name"
-            className="bg-[#1F2937] dark:bg-gray-200 text-white dark:text-gray-900 w-full p-3 rounded-md outline-none focus:ring-2 focus:ring-[#EAB308] dark:focus:ring-amber-500"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          <textarea
-            placeholder="Message"
-            rows="5"
-            className="bg-[#1F2937] dark:bg-gray-200 text-white dark:text-gray-900 w-full p-3 rounded-md outline-none focus:ring-2 focus:ring-[#EAB308] dark:focus:ring-amber-500"
-          ></textarea>
 
-          <button className="bg-[#EAB308] dark:bg-amber-500 w-full py-3 rounded-md text-black dark:text-white font-semibold hover:bg-yellow-400 dark:hover:bg-yellow-400 transition">
-            Contact Us
-          </button>
+          {/* Contact Information */}
+          <div
+            className="
+              rounded-2xl
+              border
+              border-slate-700
+              bg-[#020617]/50
+              p-8
+              transition-all
+              duration-300
+              hover:border-[#EAB308]
+              dark:bg-white
+              dark:border-slate-200
+            "
+          >
+
+            <h3 className="text-xl font-bold text-[#EAB308] mb-6">
+              Contact Information
+            </h3>
+
+
+            <div className="space-y-5">
+
+              <div>
+                <p className="text-sm text-gray-400 dark:text-gray-600">
+                  Email
+                </p>
+
+                <p className="mt-1 text-white dark:text-gray-900">
+                  mostafagerayli778@gmail.com
+                </p>
+              </div>
+
+
+              <div>
+                <p className="text-sm text-gray-400 dark:text-gray-600">
+                  Phone
+                </p>
+
+                <p className="mt-1 text-white dark:text-gray-900">
+                  +98 939 523 6615
+                </p>
+              </div>
+
+
+              <div>
+                <p className="text-sm text-gray-400 dark:text-gray-600">
+                  Location
+                </p>
+
+                <p className="mt-1 text-white dark:text-gray-900">
+                  Iran
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="mt-8 flex gap-4">
+
+              <Link
+                href="https://github.com/mostafagerayli"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  rounded-lg
+                  border
+                  border-slate-600
+                  px-4
+                  py-2
+                  text-sm
+                  text-white
+                  transition
+                  hover:border-[#EAB308]
+                  hover:text-[#EAB308]
+                  dark:text-gray-900
+                "
+              >
+                GitHub
+              </Link>
+
+
+              <Link
+                href="https://www.linkedin.com/in/mostafa-gerayli-react/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  rounded-lg
+                  border
+                  border-slate-600
+                  px-4
+                  py-2
+                  text-sm
+                  text-white
+                  transition
+                  hover:border-[#EAB308]
+                  hover:text-[#EAB308]
+                  dark:text-gray-900
+                "
+              >
+                LinkedIn
+              </Link>
+
+            </div>
+
+          </div>
+
+
+
+          {/* Collaboration Card */}
+          <div
+            className="
+              rounded-2xl
+              border
+              border-slate-700
+              bg-[#020617]/50
+              p-8
+              transition-all
+              duration-300
+              hover:border-[#EAB308]
+              dark:bg-white
+              dark:border-slate-200
+            "
+          >
+
+            <h3 className="text-2xl font-bold text-white dark:text-gray-900">
+              Let&apos;s build something valuable
+            </h3>
+
+
+            <p className="mt-4 text-gray-400 dark:text-gray-700 leading-7">
+              I&apos;m looking for opportunities where I can contribute,
+              improve my skills, and grow with a professional development team.
+            </p>
+
+
+            <Link
+              href="mailto:mostafagerayli778@gmail.com"
+              className="
+                inline-block
+                mt-8
+                rounded-lg
+                bg-[#EAB308]
+                px-6
+                py-3
+                font-semibold
+                text-black
+                transition
+                hover:bg-yellow-400
+              "
+            >
+              Send Email
+            </Link>
+
+          </div>
+
+
         </div>
+
       </div>
-    </div>
+    </section>
   );
 }
 

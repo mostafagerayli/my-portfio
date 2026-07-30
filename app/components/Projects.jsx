@@ -11,10 +11,8 @@ function Projects() {
 
       {/* لیست پروژه‌ها */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
         {/* ⭐ Basaesoft Internship (NEW) */}
         <div className="bg-[#1F2937] dark:bg-gray-200 rounded-2xl p-6 hover:scale-105 transition duration-300">
-          
           <div className="h-48 bg-gray-600 dark:bg-gray-400 rounded-md mb-4 overflow-hidden">
             <Image
               src="/images/basesoft.png"
@@ -30,10 +28,11 @@ function Projects() {
           </h3>
 
           <p className="text-gray-400 dark:text-gray-700 text-sm leading-6 mb-5">
-            6-month Front-End Internship working on a real accounting and
-            management system including modules for accounting, treasury,
-            sales, purchase, and inventory management. Built with Next.js and
-            REST APIs in a production-like environment.
+            Completed a 6-month Front-End Internship working on a real-world ERP
+            system. Built and improved interfaces for accounting, sales,
+            treasury, and inventory workflows, focusing on usability,
+            maintainability, and delivering valuable features in collaboration
+            with the development team.
           </p>
 
           <Link
@@ -66,8 +65,10 @@ function Projects() {
           </h3>
 
           <p className="text-gray-400 dark:text-gray-700 text-sm leading-6 mb-5">
-            A modern full-stack coffee shop platform built with Next.js,
-            Supabase, and Tailwind CSS.
+            A full-stack coffee shop platform featuring product management,
+            responsive interfaces, and a seamless user experience. Developed
+            with modern web technologies while focusing on clean architecture
+            and maintainable code.
           </p>
 
           <div className="flex gap-3" onClick={(e) => e.stopPropagation()}>
@@ -88,55 +89,6 @@ function Projects() {
             </Link>
           </div>
         </Link>
-
-        {/* World Wise */}
-        <Link
-          href="https://world-wise-qdw3.vercel.app"
-          className="bg-[#1F2937] dark:bg-gray-200 rounded-2xl p-6 hover:scale-105 transition duration-300"
-        >
-          <div className="h-48 bg-gray-600 dark:bg-gray-400 rounded-md mb-4 overflow-hidden">
-            <Image
-              src="/images/Screenshot 2025-12-28 101208.png"
-              width={400}
-              height={200}
-              alt="World Wise"
-              className="w-full h-48 object-cover rounded-md"
-            />
-          </div>
-
-          <h3 className="text-white dark:text-gray-900 text-xl font-semibold mb-2">
-            World Wise
-          </h3>
-
-          <p className="text-gray-400 dark:text-gray-700 text-sm">
-            React SPA with Context API, Reducer and JSON Server.
-          </p>
-        </Link>
-
-        {/* React Quiz */}
-        <Link
-          href="https://react-quiz-eight-omega.vercel.app/"
-          className="bg-[#1F2937] dark:bg-gray-200 rounded-2xl p-6 hover:scale-105 transition duration-300"
-        >
-          <div className="h-48 bg-gray-600 dark:bg-gray-400 rounded-md mb-4 overflow-hidden">
-            <Image
-              src="/images/Screenshot 2025-12-29 112545.png"
-              width={400}
-              height={200}
-              alt="React Quiz"
-              className="w-full h-48 object-cover rounded-md"
-            />
-          </div>
-
-          <h3 className="text-white dark:text-gray-900 text-xl font-semibold mb-2">
-            React Quiz
-          </h3>
-
-          <p className="text-gray-400 dark:text-gray-700 text-sm">
-            Quiz app built with useReducer, Context API and Fetch API.
-          </p>
-        </Link>
-
       </div>
     </div>
   );
