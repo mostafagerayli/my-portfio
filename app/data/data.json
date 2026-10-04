@@ -1,0 +1,116 @@
+{
+  "peste-peste": {
+    "title": "Peste Peste",
+    "description": "A production-oriented full-stack e-commerce application built with Next.js, focused on reliable checkout, secure authentication, server-side business logic, and consistent product data.",
+    "decisions": [
+      {
+        "title": "Server-first application architecture",
+        "description": "The application follows a server-first architecture where database access and sensitive business logic remain on the server. Server Actions handle administrative CRUD operations, while API routes are used for authentication and payment-related workflows."
+      },
+      {
+        "title": "Secure authentication and authorization",
+        "description": "Authentication is built around short-lived access tokens and refresh tokens. Refresh tokens are stored in HttpOnly cookies, while user roles are used for authorization and protecting admin-only routes and operations."
+      },
+      {
+        "title": "Server-authoritative business logic",
+        "description": "Critical business logic such as product pricing, inventory validation, and order totals is handled on the server. Client-side values are treated as untrusted input rather than the source of truth for transactional data."
+      },
+      {
+        "title": "Consistent client-side state management",
+        "description": "Redux Toolkit manages cart state across the application, while LocalStorage persists cart data between sessions. Server-side validation is used to reconcile persisted client state with the latest database values when necessary."
+      },
+      {
+        "title": "Data-aware caching strategy",
+        "description": "Caching and revalidation are applied according to data volatility. Relatively stable data can benefit from caching, while frequently changing transactional data such as prices and inventory is validated against the server before critical operations."
+      },
+      {
+        "title": "URL-driven product discovery",
+        "description": "Search, filtering, sorting, and pagination state are represented through URL search parameters. This makes product discovery shareable, refreshable, and compatible with browser navigation without relying entirely on local component state."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Preventing checkout with stale cart prices",
+        "problem": "Product prices could change after an item was added to the cart, leaving the client with outdated pricing data that could lead to an incorrect order total.",
+        "solution": "A server-side validation flow compares cart prices against the latest database values before checkout. When a price changes, the cart is synchronized across Redux and LocalStorage, and the user cannot continue with stale pricing. The final order total is always calculated from current server-side product data."
+      },
+      {
+        "title": "Building a reliable checkout and payment flow",
+        "problem": "Checkout involved multiple dependent steps including price calculation, shipping rules, order creation, payment initiation, and payment verification. Trusting client-side values across these steps could result in inconsistent orders or payment amounts.",
+        "solution": "The checkout flow was designed around server-side calculations and validation. Orders are created with database-derived totals, payment authorities are associated with orders, and the payment callback is verified server-side before the order status is updated."
+      },
+      {
+        "title": "Maintaining consistency between payment, orders, and inventory",
+        "problem": "A successful payment could require several related state changes, including payment confirmation, order status updates, and inventory reduction. A partial failure could leave these records inconsistent.",
+        "solution": "Prisma transactions are used during the payment verification flow so related database changes are committed atomically. This prevents partially completed payment workflows from leaving inconsistent order or inventory state."
+      },
+      {
+        "title": "Moving weight-based pricing to the backend",
+        "problem": "Products are sold by weight, meaning the final price depends on the selected package size while inventory is tracked in grams. Keeping this business logic primarily on the client could lead to inconsistent pricing between the UI and the final order.",
+        "solution": "The product model uses price_per_kg and stock_gram as the core pricing and inventory values. A backend pricing service calculates the final price for supported weights, including the 250g, 500g, and 1kg pricing rules, and the final order price is recalculated from database data."
+      },
+      {
+        "title": "Building a stable image processing pipeline",
+        "problem": "Image uploads to Supabase Storage encountered SharedArrayBuffer compatibility issues, while large source images also increased storage and delivery costs.",
+        "solution": "A reusable image-processing pipeline was introduced with Sharp to validate, compress, and convert uploaded images to WebP before storage. Safe Buffer conversion was added to stabilize uploads, and the same pipeline was applied to both product and blog images."
+      },
+      {
+        "title": "Balancing caching with data freshness",
+        "problem": "Caching improves performance, but stale cached product data can become problematic in an e-commerce system where prices and inventory may change frequently.",
+        "solution": "Caching was applied based on data volatility rather than uniformly across the application. Stable data can benefit from revalidation and caching, while critical transactional values such as prices are revalidated against the server before checkout and payment."
+      }
+    ],
+    "live": "https://pestepeste.vercel.app",
+    "github": "https://github.com/mostafagerayli/store"
+  },
+  "piano-coffee": {
+  "title": "Piano Coffee",
+  "description": "A full-stack coffee menu management application built with Next.js, focused on role-based access control, server-side data operations, and a clear separation between public menu consumption and administrative management.",
+  "decisions": [
+    {
+      "title": "Separating authentication from authorization",
+      "description": "Authentication is handled through Supabase Auth, while administrative access is determined separately through the user's role stored in the database. This keeps user identity and application permissions as distinct concerns."
+    },
+    {
+      "title": "Using Server Actions for menu mutations",
+      "description": "Menu creation, updates, and deletion are implemented with Next.js Server Actions instead of separate API endpoints for each CRUD operation. This keeps internal menu mutations close to the server-side application logic without introducing unnecessary API endpoints."
+    },
+    {
+      "title": "Enforcing authorization at the server boundary",
+      "description": "Administrative permissions are verified on the server before menu mutations are executed. The application does not rely solely on hiding dashboard functionality in the client, keeping authorization independent from the UI."
+    },
+    {
+      "title": "Keeping authentication isolated behind an API route",
+      "description": "Authentication uses a dedicated API route because it has its own request and session lifecycle, while internal menu management remains implemented through Server Actions. This keeps the communication pattern appropriate to each responsibility."
+    },
+    {
+      "title": "Separating public and administrative data flows",
+      "description": "The public interface focuses on consuming and presenting menu data, while authenticated administrative workflows handle menu mutations. Separating these responsibilities keeps the public experience independent from management operations."
+    }
+  ],
+  "challenges": [
+    {
+      "title": "Protecting administrative menu mutations",
+      "problem": "The application exposes a public coffee menu alongside administrative functionality for creating, updating, and deleting menu items. Authenticated users without the required role should not be able to perform these operations.",
+      "solution": "Authorization is enforced inside the server-side mutation flow. Before a Server Action performs a database mutation, the authenticated user's role is verified, preventing unauthorized users from modifying menu data."
+    },
+    {
+      "title": "Avoiding client-side authorization as a security boundary",
+      "problem": "Hiding administrative UI elements does not prevent a user from attempting to invoke protected operations directly. Client-side visibility therefore cannot be treated as the actual security boundary.",
+      "solution": "Authorization checks are performed on the server before administrative operations access the database. The client controls the user experience, while the server remains responsible for enforcing access rules."
+    },
+    {
+      "title": "Choosing between API Routes and Server Actions",
+      "problem": "The application required server-side authentication as well as internal menu management mutations. Using API routes for every operation would create endpoints that are only consumed by the same Next.js application.",
+      "solution": "API routes are limited to the authentication flow, while menu CRUD operations use Server Actions. This keeps the architecture smaller and matches the communication mechanism to the responsibility of each feature."
+    },
+    {
+      "title": "Keeping public menu data separate from administrative operations",
+      "problem": "The public menu and administrative dashboard work with the same underlying menu data but have fundamentally different responsibilities. Mixing their data flows could make access control and maintenance harder to reason about.",
+      "solution": "Public menu consumption and administrative mutations are separated at the application level. Public users consume menu data through the storefront, while protected Server Actions handle management operations after authorization checks."
+    }
+  ],
+  "live": "https://piano-coffee.vercel.app",
+  "github": "https://github.com/mostafagerayli/store"
+}
+}
