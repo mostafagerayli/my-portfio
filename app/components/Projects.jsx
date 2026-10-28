@@ -4,6 +4,17 @@ import Link from "next/link";
 function Projects() {
   const projects = [
     {
+      title: "GymTrix",
+      slug: "gymtrix",
+      image: "/images/gymtrix.png",
+      description:
+        "Developed a full-stack gym management platform with dual-role authentication (managers and members), biometric attendance integration, session-based and periodic subscriptions, workout plan generator, and automated SMS workflows.",
+      live: "https://gymtrix.ir",
+      github: null,
+      details: true,
+    },
+
+    {
       title: "Peste Peste",
       slug: "peste-peste",
       image: "/images/pestepeste.png",

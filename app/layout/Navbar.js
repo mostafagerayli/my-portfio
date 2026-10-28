@@ -10,9 +10,9 @@ function classNames(...classes) {
 
 const navigation = [
   { name: "Home", id: "home" },
+  { name: "About", id: "about" },
   { name: "Projects", id: "projects" },
   { name: "Skills", id: "skills" },
-  { name: "About", id: "about" },
   { name: "Contact", id: "contact" },
 ];
 

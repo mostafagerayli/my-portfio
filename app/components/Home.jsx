@@ -55,7 +55,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
               <Link
-                href="/resume/Mostafa_Gerayli_FrontEnd_Resume.pdf"
+                href="/resume/Mostafa_Gerayli_FrontEnd-Resume.pdf"
                 download
                 className="
         rounded-lg

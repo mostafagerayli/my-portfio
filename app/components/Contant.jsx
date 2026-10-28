@@ -107,7 +107,7 @@ function Contact() {
 
 
               <Link
-                href="https://www.linkedin.com/in/mostafa-gerayli-react/"
+                href="https://www.linkedin.com/in/mostafagerayli"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
